@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block head %}
+  <meta name="description" content="Learn languages from movie subtitles. 62 languages with thousands of movies and tv shows to be quizzed on">
+  <title>Learn languages for free from movie subtitles - Sublearning</title>
+{% endblock %}
+{% block content %}
+
+{% for link in links %}
+  {{link.html|safe}}<br>
+{% endfor %}
+{% endblock %}

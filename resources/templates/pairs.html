@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block head %}
+  <meta name="keywords" content="learn,{{leftlang}}">
+  <meta name="description" content="Learn {{leftlang|capitalize}} from movie subtitles in 62 languages for free">
+  <title>Learn {{leftlang|capitalize}} from movie subtitles for free</title>
+{% endblock %}
+
+{% block content %}
+<p>
+  <h1>
+    Learn {{leftlang|capitalize}} from movie subtitles
+  </h1>
+</p>
+<br>
+<p>
+<h3>
+  Choose your language to show the answer in:
+</h3>
+</p>
+<ul class="pagination pagination-lg">
+    {% for pair in pairs %}
+    <li><a id="lgrid" href="/pick/{{leftlang}}/{{pair.name}}">{{pair.name|capitalize}}</a></li>
+    {% endfor %}
+</ul>
+{% endblock %}

@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+
+{% block head %}
+<title>Learn Languages for free from the Movie - {{title.title}}</title>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <p>
+    {% if title.title|not-empty%}
+    <br>
+    <center><b>Movie / Show Title:</b> {{title.title}}</center>
+    {% else %}
+    <br>
+    <center><b>Movie / Show Title:</b> Unknown</center>
+    {% endif %}
+  </p>
+
+  <hr>
+  <font size="4">
+      <ol>
+         {% for line in fromlines %}
+          <li>{{line}}</li>
+         {% endfor %}
+      </ol>
+
+  </font>
+  <hr>
+  <p>
+  <font size="4">
+
+      <ol style="color: #eeeeee;" id="answerbox">
+    {% for line in tolines %}
+      <li>{{line}}
+      </li>
+    {% endfor %}
+  </ol>
+    </font>
+
+  </p>
+  <hr>
+    <center><font size="2">Guess the translation and then click "Show Answer" to reveal the answer</font></center>
+
+      <ul class="pager">
+        {% if session.identity %}
+          <li><a href="{{next}}?save={{save}}">Save for Review</a></li>
+        {% endif %}
+        <li><a id="skip" class="showbutton" style="width: 120px; " href="{{next}}">Skip</a></li>
+        <li><a id="answerbutton" class="showbutton" style="width: 120px; " href="#" onclick="showHideButtonClick()">Show Answer</a></li>
+      </ul>
+
+    <ul class="pager">
+    <li><a href="/returntopick/{{id.id}}/{{rev}}">Return to Pick Screen</a></li>
+      <li><a href="{{revurl}}">Switch Direction</a></li>
+  </ul>
+    <center>
+        Show
+        <select name="lines" onclick="location = this.value;">
+            <option value="{{next}}?lines=1">1</option>
+            <option value="{{next}}?lines=2">2</option>
+            <option value="{{next}}?lines=3" selected>3</option>
+            <option value="{{next}}?lines=4">4</option>
+            <option value="{{next}}?lines=5">5</option>
+            <option value="{{next}}?lines=6">6</option>
+        </select>
+         lines per page
+    </center>
+    <p>
+        {% if not session.identity %}
+    <center><a href="/login">Login</a> / <a href="/signup">Sign Up</a> to save quiz items for review at a later date.</center>
+    {% endif %}
+    </p>
+<br>
+</div>
+<div id='nextlink' style='visibility:hidden'>{{hosturl}}{{next}}</div>
+
+
+{% endblock %}
+
+{% block content-right %}
+
+<script>
+
+function showHideButtonClick() {
+  var buttonText = document.getElementById("answerbutton").innerHTML;
+  if (buttonText == "Next") {
+    window.open(document.getElementById("nextlink").innerHTML, "_self");
+  } else {
+    var answerButton = document.getElementById("answerbutton");
+    document.getElementById("answerbox").style.color = "#555";
+    answerButton.style.backgroundColor = "#fff";
+    answerButton.innerHTML = "Next";
+  }
+}
+
+</script>
+
+{% endblock %}

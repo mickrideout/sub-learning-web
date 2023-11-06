@@ -1,0 +1,7 @@
+{% for title in titles %}
+  {% if title.rev %}
+    <a href="/sub/{{title.id}}/first/{{title.rev}}">{{title.title}}</a><br>
+  {% else %}
+    <a href="/sub/{{title.id}}/first">{{title.title}}</a><br>
+  {% endif %}
+{% endfor %}

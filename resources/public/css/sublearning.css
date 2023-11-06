@@ -1,0 +1,74 @@
+.navbar-brand {
+  padding: 0px;
+}
+.navbar-brand>img {
+  height: 100%;
+  padding: 15px;
+  width: 400;
+}
+
+body {
+ background-color: #eeeeee;
+ color: #555;
+}
+
+#lgrid {
+  background-color: #cedbe3;
+}
+
+.pagination-lg {
+  li {
+    a {
+     /* background-color: #cedbe3;*/
+      background-color: aliceblue;
+    }
+  }
+}
+
+
+    /* Remove the navbar's default margin-bottom and rounded borders */
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+      background-color: #eeeeee;
+    }
+
+    textarea {
+       width: 100%;
+      background-color: whitesmoke;
+    }
+
+    .jumbotron {
+       background-color: #eeeeee;
+    }
+
+    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+    .row.content {height: 450px}
+
+    /* Set gray background color and 100% height */
+    .sidenav {
+      padding-top: 20px;
+      height: 100%;
+      background-color: #eeeeee;
+    }
+
+
+    /* Set black background color, white text and some padding */
+    footer {
+      color: #555k;
+      padding: 15px;
+      background-color: #eeeeee;
+      a {
+        color: #555k;
+      }
+    }
+
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height:auto;}
+    }
+

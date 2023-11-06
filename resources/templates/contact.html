@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block head %}
+  <meta name="description" content="Contact Sublearning - Learn languages from movie subtitles for free in 62 languages.">
+  <title>Contact Sublearning - Learn languages for free from movie subtitles</title>
+{% endblock %}
+
+{% block content %}
+
+<h2>Send us a message</h2><br><br>
+<div class="row">
+<div class="col-md-6">
+<form method="POST" role="form">
+  {% csrf-field %}
+<div class="form-group">
+  {% if flash.errors.email %}
+<div class="alert alert-danger">{{flash.errors.email|join}}</div>
+{% endif %}
+{% if flash.email %}
+  <label for="email">Your Email address</label>
+  <input type="email" class="form-control" name="email" value="{{flash.email}}">
+{% else %}
+  <label for="email">Your Email address</label>
+  <input type="email" class="form-control" name="email">
+{% endif %}
+</div>
+<div class="form-group">
+  {% if flash.errors.subject %}
+<div class="alert alert-danger">{{flash.errors.subject|join}}</div>
+{% endif %}
+<label for="subject">Subject:</label>
+<input type="text" class="form-control" name="subject">
+</div>
+<div class="form-group">
+  {% if flash.errors.body %}
+<div class="alert alert-danger">{{flash.errors.body|join}}</div>
+{% endif %}
+  <label for="body">Message:</label>
+  <textarea name="body" cols="120" rows="5"></textarea>
+
+</div>
+
+
+<button type="submit" class="btn btn-default">Send</button>
+</form>
+</div>
+</div>
+
+{% endblock %}

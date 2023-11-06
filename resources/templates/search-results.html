@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block head %}
+  <title>Search Sublearning - Learn languages for free from movie subtitles</title>
+{% endblock %}
+
+{% block content %}
+{% for title in titles %}
+  {% if title.rev %}
+    <a href="/sub/{{title.id}}/first/{{title.rev}}">{{title.title}}</a><br>
+  {% else %}
+    <a href="/sub/{{title.id}}/first">{{title.title}}</a><br>
+  {% endif %}
+{% endfor %}
+
+{% if titles %}
+{% else %}
+  No results found
+{% endif %}
+
+{% endblock %}

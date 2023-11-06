@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+
+{% block head %}
+  <meta name="description" content="Learn languages from movie subtitles in 62 languages for free from thousands of movies">
+  <title>Learn languages from movie subtitles for free - Sublearning</title>
+{% endblock %}
+
+{% block content %}
+{% if user-message %}
+<div class="alert alert-info">{{user-message|join}}</div>
+{% endif %}
+
+
+<p>
+  <h1 align="right">
+    Learn languages from movie subtitles....
+</h1>
+  <h4 align="right">
+  Choose two languages then a movie or tv show to be quizzed on its subtitles.
+  </h4>
+</p>
+<br>
+<p>
+<h3>
+  Choose the language you want to learn:
+</h3>
+ </p>
+<ul class="pagination pagination-lg">
+ <li><a id="lgrid" href="/pairs/afrikaans">Afrikaans</a></li>
+ <li><a id="lgrid" id="lgrid" href="/pairs/albanian">Albanian</a></li>
+ <li><a id="lgrid" href="/pairs/arabic">Arabic</a></li>
+ <li><a id="lgrid" href="/pairs/basque">Basque</a></li>
+ <li><a id="lgrid" href="/pairs/bengali">Bengali</a></li>
+ <li><a id="lgrid" href="/pairs/bosnian">Bosnian</a></li>
+ <li><a id="lgrid" href="/pairs/breton">Breton</a></li>
+ <li><a id="lgrid" href="/pairs/bulgarian">Bulgarian</a></li>
+ <li><a id="lgrid" href="/pairs/catalan">Catalan</a></li>
+ <li><a id="lgrid" href="/pairs/chinese_china">Chinese</a></li>
+ <li><a id="lgrid" href="/pairs/chinese_taiwan">Chinese Taiwan</a></li>
+ <li><a id="lgrid" href="/pairs/croatian">Croatian</a></li>
+ <li><a id="lgrid" href="/pairs/czech">Czech</a></li>
+ <li><a id="lgrid" href="/pairs/danish">Danish</a></li>
+ <li><a id="lgrid" href="/pairs/dutch">Dutch</a></li>
+ <li><a id="lgrid" href="/pairs/english">English</a></li>
+ <li><a id="lgrid" href="/pairs/esperanto">Esperanto</a></li>
+ <li><a id="lgrid" href="/pairs/estonian">Estonian</a></li>
+ <li><a id="lgrid" href="/pairs/finnish">Finnish</a></li>
+ <li><a id="lgrid" href="/pairs/french">French</a></li>
+ <li><a id="lgrid" href="/pairs/galician">Galician</a></li>
+ <li><a id="lgrid" href="/pairs/georgian">Georgian</a></li>
+ <li><a id="lgrid" href="/pairs/german">German</a></li>
+ <li><a id="lgrid" href="/pairs/greek">Greek</a></li>
+ <li><a id="lgrid" href="/pairs/hebrew">Hebrew</a></li>
+ <li><a id="lgrid" href="/pairs/hindi">Hindi</a></li>
+ <li><a id="lgrid" href="/pairs/hungarian">Hungarian</a></li>
+ <li><a id="lgrid" href="/pairs/icelandic">Icelandic</a></li>
+ <li><a id="lgrid" href="/pairs/indonesian">Indonesian</a></li>
+ <li><a id="lgrid" href="/pairs/italian">Italian</a></li>
+ <li><a id="lgrid" href="/pairs/japanese">Japanese</a></li>
+ <li><a id="lgrid" href="/pairs/kazakh">Kazakh</a></li>
+ <li><a id="lgrid" href="/pairs/korean">Korean</a></li>
+ <li><a id="lgrid" href="/pairs/latvian">Latvian</a></li>
+ <li><a id="lgrid" href="/pairs/lithuanian">Lithuanian</a></li>
+ <li><a id="lgrid" href="/pairs/macedonian">Macedonian</a></li>
+ <li><a id="lgrid" href="/pairs/malayalam">Malayalam</a></li>
+ <li><a id="lgrid" href="/pairs/malay">Malay</a></li>
+ <li><a id="lgrid" href="/pairs/norwegian">Norwegian</a></li>
+ <li><a id="lgrid" href="/pairs/persian">Persian</a></li>
+ <li><a id="lgrid" href="/pairs/polish">Polish</a></li>
+ <li><a id="lgrid" href="/pairs/portuguese">Portuguese</a></li>
+ <li><a id="lgrid" href="/pairs/portuguese_brazilian">Portuguese Brazilian</a></li>
+ <li><a id="lgrid" href="/pairs/romanian">Romanian</a></li>
+ <li><a id="lgrid" href="/pairs/russian">Russian</a></li>
+ <li><a id="lgrid" href="/pairs/serbian">Serbian</a></li>
+ <li><a id="lgrid" href="/pairs/sinhala">Sinhala</a></li>
+ <li><a id="lgrid" href="/pairs/slovak">Slovak</a></li>
+ <li><a id="lgrid" href="/pairs/slovenian">Slovenian</a></li>
+ <li><a id="lgrid" href="/pairs/spanish">Spanish</a></li>
+ <li><a id="lgrid" href="/pairs/swedish">Swedish</a></li>
+ <li><a id="lgrid" href="/pairs/tagalog">Tagalog</a></li>
+ <li><a id="lgrid" href="/pairs/tamil">Tamil</a></li>
+ <li><a id="lgrid" href="/pairs/telugu">Telugu</a></li>
+ <li><a id="lgrid" href="/pairs/thai">Thai</a></li>
+ <li><a id="lgrid" href="/pairs/turkish">Turkish</a></li>
+ <li><a id="lgrid" href="/pairs/ukrainian">Ukrainian</a></li>
+ <li><a id="lgrid" href="/pairs/urdu">Urdu</a></li>
+ <li><a id="lgrid" href="/pairs/vietnamese">Vietnamese</a></li>
+</ul>
+{% endblock %}

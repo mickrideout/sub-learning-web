@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block head %}
+  <title>Signup Sublearning - Learn languages for free from movie subtitles</title>
+{% endblock %}
+
+{% block content %}
+<h1>Sign Up</h1><br><br>
+<div class="row">
+<div class="col-md-6">
+<form method="POST" role="form">
+  {% csrf-field %}
+<div class="form-group">
+  {% if flash.errors.email %}
+<div class="alert alert-danger">{{flash.errors.email|join}}</div>
+{% endif %}
+{% if flash.email %}
+  <label for="email">Email address</label>
+  <input type="email" class="form-control" name="email" value="{{flash.email}}">
+{% else %}
+  <label for="email">Email address</label>
+  <input type="email" class="form-control" name="email">
+{% endif %}
+</div>
+<div class="form-group">
+  {% if flash.errors.password %}
+<div class="alert alert-danger">{{flash.errors.password|join}}</div>
+{% endif %}
+<label for="password">Password</label>
+<input type="password" class="form-control" name="password">
+</div>
+<div class="form-group">
+<label for="confirmation">Re-enter Password</label>
+<input type="password" class="form-control" name="confirmation">
+</div>
+<button type="submit" class="btn btn-default">Submit</button>
+</form>
+</div>
+</div>
+{% endblock %}

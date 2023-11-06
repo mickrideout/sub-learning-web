@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+
+{% block head %}
+  <meta name="description" content="Learn languages from movie subtitles. 62 languages with thousands of movies and tv shows to be quizzed on">
+  <title>Learn Languages for free from the Movie - {{title.title}} - Sublearning</title>
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+
+  <h3><center>Review</center></h3>
+
+  <p>
+    {% if title.title|not-empty%}
+    <br>
+    <center><b>Movie / Show Title:</b> {{title.title}}</center>
+    {% else %}
+    <br>
+    <center><b>Movie / Show Title:</b> Unknown</center>
+    {% endif %}
+  </p>
+
+  <hr>
+
+
+  <hr>
+    <p>
+    <font size="4">
+      <ol>
+      {% for line in fromlines %}
+        <li>{{line}}</li>
+      {% endfor %}
+      </ol>
+      </font>
+  </p>
+  <hr>
+  <p>
+  <font size="4">
+
+      <ol style="color: #eeeeee;" id="answerbox">
+    {% for line in tolines %}
+      <li>{{line}}
+      </li>
+    {% endfor %}
+  </ol>
+    </font>
+
+  </p>
+
+      <ul class="pager">
+        {% if session.identity %}
+          <li><a href="{{next}}?save={{current-review-str}}">Save for Review</a></li>
+        {% endif %}
+        <li><a id="showbutton" style="width: 120px" href="#" onclick="showHideButtonClick()">Show Answer</a></li>
+      </ul>
+    <p>
+</div>
+</div>
+<br>
+
+<div id='nextlink' style='visibility:hidden'>{{:hosturl}}/review?done={{current-review-str}}</div>
+
+<script>
+
+function showHideButtonClick() {
+  var buttonText = document.getElementById("showbutton").innerHTML;
+  if (buttonText == "Next") {
+    window.open(document.getElementById("nextlink").innerHTML, "_self");
+  } else {
+    document.getElementById("answerbox").style.color = "#555";
+    document.getElementById("showbutton").innerHTML = "Next";
+  }
+}
+
+</script>
+{% endblock %}

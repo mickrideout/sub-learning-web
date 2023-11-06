@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+
+{% block head %}
+  <meta name="keywords" content="learn,{{fromlang}},{{tolang}}">
+  <meta name="description" content="Learn {{fromlang|capitalize}} and {{tolang|capitalize}} from movie subtitles for free. Sublearning has 62 languages and thousands of movies to learn from">
+  <title>Learn {{fromlang|capitalize}} and {{tolang|capitalize}} from movie subtitles for free</title>
+{% endblock %}
+
+
+{% block content %}
+<p>
+  <h1>
+    <font size="6">
+    Learn {{fromlang|capitalize}} and {{tolang|capitalize}} from movie subtitles
+    </font>
+  </h1>
+</p>
+<br>
+<center><h3>Pick your movie for the quiz by:  </h3></center>
+<div class="container">
+      <ul class="pager">
+          <li><a href="/quiz/{{fromlang}}/{{tolang}}">Randomly Selecting Movie</a></li>
+      </ul>
+  <center>Or</center><br>
+
+<center>
+<form style="width: 30%;" action="/search/{{fromlang}}/{{tolang}}" method="post">
+  {% csrf-field %}
+    <div class="form-group">
+      <input size="20" class="form-control" type="text" name="search" required>
+    </div>
+    <button type="submit" class="btn btn-default">Search</button>
+  </div>
+</form>
+  </center>
+<br>
+<center>Or By Title</center><br>
+
+<center>
+<a href="#" ref="/titles/{{fromlang}}/{{tolang}}/A" class="divlink" >A</a>&nbsp;
+<a href="#" ref="/titles/{{fromlang}}/{{tolang}}/B" class="divlink" >B</a>&nbsp;
+<a href="#" ref="/titles/{{fromlang}}/{{tolang}}/C" class="divlink" >C</a>&nbsp;
+<a href="#" ref="/titles/{{fromlang}}/{{tolang}}/D" class="divlink" >D</a>&nbsp;
+<a href="#" ref="/titles/{{fromlang}}/{{tolang}}/E" class="divlink" >E</a>&nbsp;
+<a href="#" ref="/titles/{{fromlang}}/{{tolang}}/F" class="divlink" >F</a>&nbsp;
+<a href="#" ref="/titles/{{fromlang}}/{{tolang}}/G" class="divlink" >G</a>&nbsp;
+<a href="#" ref="/titles/{{fromlang}}/{{tolang}}/H" class="divlink" >H</a>&nbsp;
+<a href="#" ref="/titles/{{fromlang}}/{{tolang}}/I" class="divlink" >I</a>&nbsp;
+<a href="#" ref="/titles/{{fromlang}}/{{tolang}}/J" class="divlink" >J</a>&nbsp;
+<a href="#" ref="/titles/{{fromlang}}/{{tolang}}/K" class="divlink" >K</a>&nbsp;
+<a href="#" ref="/titles/{{fromlang}}/{{tolang}}/L" class="divlink" >L</a>&nbsp;
+<a href="#" ref="/titles/{{fromlang}}/{{tolang}}/M" class="divlink" >M</a>&nbsp;
+<a href="#" ref="/titles/{{fromlang}}/{{tolang}}/N" class="divlink" >N</a>&nbsp;
+<a href="#" ref="/titles/{{fromlang}}/{{tolang}}/O" class="divlink" >O</a>&nbsp;
+<a href="#" ref="/titles/{{fromlang}}/{{tolang}}/P" class="divlink" >P</a>&nbsp;
+<a href="#" ref="/titles/{{fromlang}}/{{tolang}}/Q" class="divlink" >Q</a>&nbsp;
+<a href="#" ref="/titles/{{fromlang}}/{{tolang}}/R" class="divlink" >R</a>&nbsp;
+<a href="#" ref="/titles/{{fromlang}}/{{tolang}}/S" class="divlink" >S</a>&nbsp;
+<a href="#" ref="/titles/{{fromlang}}/{{tolang}}/T" class="divlink" >T</a>&nbsp;
+<a href="#" ref="/titles/{{fromlang}}/{{tolang}}/U" class="divlink" >U</a>&nbsp;
+<a href="#" ref="/titles/{{fromlang}}/{{tolang}}/V" class="divlink" >V</a>&nbsp;
+<a href="#" ref="/titles/{{fromlang}}/{{tolang}}/W" class="divlink" >W</a>&nbsp;
+<a href="#" ref="/titles/{{fromlang}}/{{tolang}}/X" class="divlink" >X</a>&nbsp;
+<a href="#" ref="/titles/{{fromlang}}/{{tolang}}/Y" class="divlink" >Y</a>&nbsp;
+<a href="#" ref="/titles/{{fromlang}}/{{tolang}}/Z" class="divlink" >Z</a>&nbsp;
+</center>
+<br>
+
+<hr>
+
+<div id="result"></div>
+</div>
+{% endblock %}
+
+
+
+
+
